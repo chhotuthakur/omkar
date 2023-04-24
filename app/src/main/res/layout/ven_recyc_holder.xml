@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/title_rec_holder"
+        android:background="@drawable/btn_bg"
+        android:padding="25dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vendor Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:padding="8dp"
+            android:textColor="@color/text_blue"
+            android:id="@+id/ven_rec_name_txt"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:textColor="@color/text_blue"
+                android:drawableStart="@drawable/ic_baseline_local_phone_24"
+
+                android:id="@+id/ven_rec_phone_txt"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:gravity="left"
+                android:textColor="@color/text_blue"
+                android:paddingEnd="15dp"
+                android:id="@+id/ven_rec_mail_txt"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
