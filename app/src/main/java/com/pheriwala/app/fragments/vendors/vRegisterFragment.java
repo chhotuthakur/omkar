@@ -1,23 +1,18 @@
-package com.pheriwala.app.fragments.customers;
-
-import static android.content.ContentValues.TAG;
+package com.pheriwala.app.fragments.vendors;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,10 +22,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.pheriwala.app.R;
+import com.pheriwala.app.fragments.customers.LoginFragment;
 import com.pheriwala.app.models.Customers;
 
 
-public class RegisterFragment extends Fragment {
+public class vRegisterFragment extends Fragment {
 
 
     TextView log_txt;
@@ -45,13 +41,13 @@ public class RegisterFragment extends Fragment {
 
 
 
-    public RegisterFragment() {
+    public vRegisterFragment() {
         // Required empty public constructor
     }
 
 
-    public static RegisterFragment newInstance(String param1, String param2) {
-        RegisterFragment fragment = new RegisterFragment();
+    public static vRegisterFragment newInstance(String param1, String param2) {
+        vRegisterFragment fragment = new vRegisterFragment();
 
         return fragment;
     }
@@ -66,7 +62,7 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-       View v = inflater.inflate(R.layout.fragment_register, container, false);
+       View v = inflater.inflate(R.layout.fragment_vregister, container, false);
 
 
         log_txt = v.findViewById(R.id.log_acc_txt);

@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:title="Dashboard"
+        android:id="@+id/cust_side_home"
+        android:icon="@drawable/ic_baseline_home_24"/>
+    <item
         android:title="Profile"
         android:id="@+id/cust_side_profile"
         android:icon="@drawable/ic_baseline_person_24"/>
@@ -10,8 +14,8 @@
         android:id="@+id/cust_side_product"
         android:icon="@drawable/ic_baseline_shopping_cart_24"/>
     <item
-        android:title="Settings"
-        android:id="@+id/cust_side_setting"
+        android:title="Vendors"
+        android:id="@+id/cust_side_vendors"
         android:icon="@drawable/ic_baseline_settings_24"/>
     <item
         android:title="Log Out"

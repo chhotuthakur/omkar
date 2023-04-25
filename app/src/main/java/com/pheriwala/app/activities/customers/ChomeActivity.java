@@ -19,6 +19,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.pheriwala.app.R;
 import com.pheriwala.app.fragments.customers.ChomeFragment;
 import com.pheriwala.app.fragments.customers.LoginFragment;
+import com.pheriwala.app.fragments.customers.ProductFragment;
+import com.pheriwala.app.fragments.customers.ProfileFragment;
+import com.pheriwala.app.fragments.customers.VendorFragment;
 
 
 public class ChomeActivity extends AppCompatActivity {
@@ -103,23 +106,24 @@ public class ChomeActivity extends AppCompatActivity {
         Fragment fragment = null;
         Class fragmentClass;
         switch(menuItem.getItemId()) {
-            case R.id.ven_side_proda:
-                fragmentClass = VenProFragment.class;
+            case R.id.cust_side_home:
+                fragmentClass = ChomeFragment.class;
                 break;
-            case R.id.ven_side_pro:
-                fragmentClass = VenProfileFragment.class;
+            case R.id.cust_side_product:
+                fragmentClass = ProductFragment.class;
                 break;
-            case R.id.ven_side_locate:
-                fragmentClass = VenPlacesFragment.class;
+            case R.id.cust_side_vendors:
+                fragmentClass = VendorFragment.class;
+                break;
+            case R.id.cust_side_profile:
+                fragmentClass = ProfileFragment.class;
                 break;
 
 
-            case R.id.ven_side_not:
-                fragmentClass = AddproFragment.class;
-                break;
+
 
             default:
-                fragmentClass = VenProFragment.class;
+                fragmentClass = ChomeFragment.class;
         }
 
         try {

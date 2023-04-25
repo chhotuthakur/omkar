@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/chome_nav_view"
-        app:menu="@menu/cust_side_menu"/>
+        app:menu="@menu/cust_side_menu"
+        android:layout_gravity="left"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
