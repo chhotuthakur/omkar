@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quantity"
+                android:text="Phone"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
@@ -50,7 +50,7 @@
                 android:gravity="left"
                 android:textColor="@color/text_blue"
                 android:paddingEnd="15dp"
-                android:id="@+id/ven_rec_mail_txt"/>
+                android:id="@+id/ven_rec_location_txt"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

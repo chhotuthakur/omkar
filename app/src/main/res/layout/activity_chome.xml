@@ -4,10 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/chome_drawer"
     tools:context=".activities.customers.ChomeActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chome_fr_container"/>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/chome_nav_view"/>
+        android:id="@+id/chome_nav_view"
+        app:menu="@menu/cust_side_menu"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.pheriwala.app.R;
+import com.pheriwala.app.activities.customers.ChomeActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this,AccountActivity.class));
+                startActivity(new Intent(SplashActivity.this, ChomeActivity.class));
             }
         },5000);
     }
