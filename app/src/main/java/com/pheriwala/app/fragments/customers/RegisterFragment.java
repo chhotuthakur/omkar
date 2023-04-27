@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.os.Bundle;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -11,11 +12,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,19 +33,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.pheriwala.app.R;
 import com.pheriwala.app.models.Customers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class RegisterFragment extends Fragment {
 
 
     TextView log_txt;
-    EditText name, mail , password,phone,location ;
+    EditText name, mail , password,phone,location ,typ ;
     String id, nme,email,pass,phn,locate,type;
-    RadioButton ccheck,vcheck;
     Button reg ;
+    Spinner spinner;
+    List<String> typeList;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private DatabaseReference databaseReference;
-    RadioGroup radioGroup;
+
 
 
 
@@ -75,7 +83,30 @@ public class RegisterFragment extends Fragment {
         phone = v.findViewById(R.id.cst_edt_numb_reg);
         password = v.findViewById(R.id.cst_edt_pass_reg);
         location = v.findViewById(R.id.cst_edt_addres_reg);
+        spinner = v.findViewById(R.id.chck_holder);
+
+        typeList= new ArrayList<>();
+        typeList.add("Customer");
+        typeList.add("Vendor");
+
+        spinner.setAdapter(new ArrayAdapter<>(getContext(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item,typeList));
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                type = typeList.get(i);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+//        typ = v.findViewById(R.id.cst_edt_name_type);
         reg = v.findViewById(R.id.cust_reg_btn);
+
 
 
 
@@ -84,6 +115,7 @@ public class RegisterFragment extends Fragment {
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
                 regUser();
 
@@ -106,7 +138,10 @@ public class RegisterFragment extends Fragment {
        return v;
     }
 
+
+
     private void regUser() {
+
 
 
         nme = name.getText().toString();
@@ -129,12 +164,15 @@ public class RegisterFragment extends Fragment {
                     databaseReference = FirebaseDatabase.getInstance().getReference();
 //                Products products = new Products();
 
+
+
                     Customers customers = new Customers();
 
                     databaseReference.child("Customer").child(id).child("name").setValue(nme);
                     databaseReference.child("Customer").child(id).child("email").setValue(email);
                     databaseReference.child("Customer").child(id).child("phone").setValue(phn);
                     databaseReference.child("Customer").child(id).child("address").setValue(locate);
+                    databaseReference.child("Customer").child(id).child("type").setValue(type);
 //                    databaseReference.child("Customer").child(id).child("type").setValue(type);
 
 

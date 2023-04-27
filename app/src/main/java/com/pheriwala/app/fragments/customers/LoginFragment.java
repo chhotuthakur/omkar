@@ -1,11 +1,14 @@
 package com.pheriwala.app.fragments.customers;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +22,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.pheriwala.app.R;
 import com.pheriwala.app.activities.customers.ChomeActivity;
+import com.pheriwala.app.activities.vendor.VhomeActivity;
 
 
 public class LoginFragment extends Fragment {
@@ -34,6 +42,9 @@ public class LoginFragment extends Fragment {
     FirebaseUser mUser;
     FirebaseDatabase database;
     DatabaseReference reference;
+    String userEmail,custl;
+
+
 
 
 
@@ -88,9 +99,43 @@ public class LoginFragment extends Fragment {
                 mAuth.signInWithEmailAndPassword(email,pas).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(getContext(),"Logged In",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Logged In", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getActivity(),ChomeActivity.class));
 
+//                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                        if (user != null) {
+//                             userEmail = user.getEmail();
+//                        }
+//
+//                        reference = FirebaseDatabase.getInstance().getReference().child("Customer");
+//                        Query query = reference.child("type").orderByChild("type").equalTo("Customer");
+//                        query.addListenerForSingleValueEvent(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(DataSnapshot dataSnapshot) {
+//                                if (dataSnapshot.exists()) {
+//
+////                                  custl= "true";
+//                                    startActivity(new Intent(getActivity(),ChomeActivity.class));
+//
+//                                }else{
+//                                    startActivity(new Intent(getActivity(), VhomeActivity.class));
+//                                }
+//                            }
+//
+//                            @Override
+//                            public void onCancelled(DatabaseError databaseError) {
+//                                throw databaseError.toException(); // don't ignore errors
+//                            }
+//                        });
+
+//                        if (custl =="true"){
+//
+//                            startActivity(new Intent(getActivity(),ChomeActivity.class));
+//                        }else{
+//                            startActivity(new Intent(getActivity(), VhomeActivity.class));
+//                        }
+//
+//                    }
                     }
                 });
 

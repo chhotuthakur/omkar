@@ -8,7 +8,7 @@ public class Products {
     }
 
     public Products(String id, String name, String qty, String price) {
-        Id = id;
+        this.Id = id;
         this.name = name;
         this.qty = qty;
         this.price = price;

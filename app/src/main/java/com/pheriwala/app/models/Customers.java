@@ -24,11 +24,11 @@ public class Customers {
         this.id = id;
     }
 
-    public String getname() {
+    public String getName() {
         return name;
     }
 
-    public void setname(String username) {
+    public void setName(String name) {
         this.name = name;
     }
 

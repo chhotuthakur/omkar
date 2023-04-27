@@ -11,27 +11,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.pheriwala.app.R;
+import com.pheriwala.app.models.Customers;
 import com.pheriwala.app.models.Vendors;
 
-public class FirebaseCustomerAdapter  extends FirebaseRecyclerAdapter<Vendors, FirebaseCustomerAdapter.productViewHolder> {
+public class FirebaseCustomerAdapter  extends FirebaseRecyclerAdapter<Customers, FirebaseCustomerAdapter.productViewHolder> {
 
 
-    /**
-     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
-     * {@link FirebaseRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
-    public FirebaseCustomerAdapter(@NonNull FirebaseRecyclerOptions<Vendors> options) {
+
+    public FirebaseCustomerAdapter(@NonNull FirebaseRecyclerOptions<Customers> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull productViewHolder holder, int position, @NonNull Vendors model) {
+    protected void onBindViewHolder(@NonNull productViewHolder holder, int position, @NonNull Customers model) {
 
         holder.name.setText(model.getName());
         holder.phone.setText(model.getPhone());
-        holder.address.setText(model.getLocation());
+        holder.address.setText(model.getAddress());
 
 
     }
