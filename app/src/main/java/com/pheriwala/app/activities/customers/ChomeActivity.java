@@ -22,6 +22,7 @@ import com.pheriwala.app.fragments.customers.LoginFragment;
 import com.pheriwala.app.fragments.customers.ProductFragment;
 import com.pheriwala.app.fragments.customers.ProfileFragment;
 import com.pheriwala.app.fragments.customers.VendorFragment;
+import com.pheriwala.app.fragments.vendors.NotiFragment;
 
 
 public class ChomeActivity extends AppCompatActivity {
@@ -117,6 +118,9 @@ public class ChomeActivity extends AppCompatActivity {
                 break;
             case R.id.cust_side_profile:
                 fragmentClass = ProfileFragment.class;
+                break;
+            case R.id.cust_side_noti:
+                fragmentClass = NotiFragment.class;
                 break;
 
 

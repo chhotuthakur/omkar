@@ -20,5 +20,8 @@
     <item
         android:title="Log Out"
         android:id="@+id/cust_side_lout"/>
+    <item
+        android:title="Notification"
+        android:id="@+id/cust_side_noti"/>
 
 </menu>
